@@ -1,0 +1,15 @@
+牛顿迭代
+x1 = x0 - f(x0)/f1(x0);
+
+3元3次
+range = linspace(-1,1,21)
+[x,y,z] = meshgrid(range,range,range)
+v = x.^3 - x.*(y.^2)-z;
+p = patch(isosurface(x,y,z,v,0))
+p.FaceColor = 'none'
+p.EdgeColor = 'red'
+daspect([1,1,1])
+view(3);axis tight
+grid on
+xlabel('x'),ylabel('y'),zlabel('z')
+view(45,30)
